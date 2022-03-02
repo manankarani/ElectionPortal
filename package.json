@@ -1,0 +1,29 @@
+{
+  "name": "electionportal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "snyk test",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Manan Karani, Niyati Karani",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.3",
+    "compression": "^1.7.4",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "glob": "^7.2.0",
+    "http": "^0.0.1-security",
+    "https-localhost": "^4.7.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.4.0",
+    "mongoose": "^6.2.4",
+    "nodemon": "^2.0.15",
+    "socketio": "^1.0.0"
+  }
+}

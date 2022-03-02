@@ -1,0 +1,41 @@
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dependencies
+#/configs/configs.js
+
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+/configs/access.log
+configs/access.log
+/public/upload/*.xlsx
+
+.scannerwork
+.DS_Store
+server-cert.pem
+server-csr.pem
+server-key.pem
+package_bk.json
+statics/defination.js
+
+/Election
+.env
