@@ -10,7 +10,6 @@ module.exports = function (app, express) {
       require(file);
     });
   });
-  W;
   glob(__dirname + "/**/*.routes.js", {}, (err, files) => {
     files.map((file) => {
       require(file)(app, express);
