@@ -6,6 +6,20 @@ module.exports = function (app, express) {
   router.post("/addVote", (req, res) => {
     return new VotersController().boot(req, res).addVote();
   });
-
+  router.get("/getVotes", (req, res) => {
+    return new VotersController().boot(req, res).getVotes();
+  });
+  router.get("/getTotalVotes", (req, res) => {
+    return new VotersController().boot(req, res).getTotalVotes();
+  });
+  router.post("/addVoter", (req, res) => {
+    return new VotersController().boot(req, res).addVoter();
+  });
+  router.get("/getVoter", (req, res) => {
+    return new VotersController().boot(req, res).getVoter();
+  });
+  router.get("/endVoting", (req, res) => {
+    return new VotersController().boot(req, res).endVoting();
+  });
   app.use(config, router);
 };

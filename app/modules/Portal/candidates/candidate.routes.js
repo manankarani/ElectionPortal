@@ -7,5 +7,9 @@ module.exports = function (app, express) {
     return new CandidateController().boot(req, res).addCandidate();
   });
 
+  router.get("/getCandidates", (req, res) => {
+    return new CandidateController().boot(req, res).getCandidates();
+  });
+
   app.use(config, router);
 };

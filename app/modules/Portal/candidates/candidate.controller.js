@@ -29,6 +29,24 @@ class CandidatesController extends Controller {
     }
   }
 
+  async getCandidates() {
+    try {
+      const candidates = await Candidates.find({});
+      return this.res.status(200).json({
+        success: true,
+        message: "Candidates fetched successfully",
+        candidates: candidates,
+      });
+    } catch (error) {
+      console.error(error);
+      return this.res.status(500).json({
+        success: false,
+        message: "A110: Error in fetching candidates",
+        error: error,
+      });
+    }
+  }
+
   async verifyAndPrepareCandidateId(initial = "CAN") {
     let newId = await frequentUtility.generateNumber(6);
     let isUnique = false;

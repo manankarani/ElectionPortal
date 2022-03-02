@@ -13,6 +13,7 @@ const VoteSchema = new schema({
 mongoose.model("Vote", VoteSchema, "Vote");
 
 const VoterSchema = new schema({
+  voterId: { type: String, required: true },
   name: { type: String, required: true },
   age: { type: Number, required: true },
   mobile: { type: Number, required: true },
