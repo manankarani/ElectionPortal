@@ -8,7 +8,6 @@ const Candidates = mongoose.model("Candidates");
 var async = require("async");
 
 class VotersController extends Controller {
-
   async addVoter() {
     try {
       let newVoter = this.req.body;
