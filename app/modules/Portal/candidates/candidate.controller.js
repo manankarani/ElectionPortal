@@ -35,7 +35,7 @@ class CandidatesController extends Controller {
       return this.res.status(200).json({
         success: true,
         message: "Candidates fetched successfully",
-        candidates: candidates,
+        data: candidates,
       });
     } catch (error) {
       console.error(error);

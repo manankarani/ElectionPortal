@@ -58,6 +58,7 @@ class VotersController extends Controller {
         return this.res.status(400).json({
           success: false,
           message: "A110: Duplicate candidates",
+          data: candIds,
         });
       }
 
