@@ -21,5 +21,8 @@ module.exports = function (app, express) {
   router.get("/endVoting", (req, res) => {
     return new VotersController().boot(req, res).endVoting();
   });
+  router.post("/showBallot", (req, res) => {
+    return new VotersController().boot(req, res).showBallot();
+  });
   app.use(config, router);
 };

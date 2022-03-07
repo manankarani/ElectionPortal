@@ -14,6 +14,10 @@ class VotersController extends Controller {
       newVoter["voterId"] = await this.verifyAndPrepareVoterId();
       const voter = new Voter(newVoter);
       await voter.save();
+      // io.emit("showBallot",{
+      //   voterId: newVoter.voterId,
+      //   name: newVoter.name,
+      // })
       return this.res.status(200).json({
         success: true,
         message: "Voter Added Successfully",
@@ -117,6 +121,14 @@ class VotersController extends Controller {
                       hasVoted: true,
                     }
                   );
+                  io.emit("vote", {
+                    voteId: voteId,
+                    voterId: voterId,
+                  });
+
+                  io.emit("wait", {
+                    voterId: voterId,
+                  });
 
                   return this.res.status(200).json({
                     success: true,
@@ -250,6 +262,22 @@ class VotersController extends Controller {
       return this.res.status(500).json({
         success: false,
         message: "A110: Error in fetching votes",
+      });
+    }
+  }
+
+  async showBallot() {
+    try {
+      io.emit("showBallot", {});
+      return this.res.status(200).json({
+        success: true,
+        message: "Ballot shown successfully",
+      });
+    } catch (error) {
+      console.error(error);
+      return this.res.status(500).json({
+        success: false,
+        message: "A110: Error sending ballot",
       });
     }
   }

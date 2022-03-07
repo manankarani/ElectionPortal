@@ -10,7 +10,7 @@ module.exports = (server) => {
   });
   console.log("Socket Initialization");
   // io.set('origins', '*:*');
-  io.on("connection", function (client) {
+  io.once("connection", function (client) {
     console.log("Handshake Successful ");
     client.on("disconnect", function () {
       console.log("disconnected");
