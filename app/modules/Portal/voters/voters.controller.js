@@ -268,7 +268,14 @@ class VotersController extends Controller {
 
   async showBallot() {
     try {
-      io.emit("showBallot", {});
+      const { voterId } = this.req.body;
+      if(!voterId) {
+        return this.res.status(400).json({
+          success: false,
+          message: "A120: Voter not found",
+        });
+      }
+      io.emit("showBallot", voterId);
       return this.res.status(200).json({
         success: true,
         message: "Ballot shown successfully",
