@@ -14,7 +14,7 @@ mongoose.connect(config.mongodb.url, config.mongodb.mongoOptions).then(
       names.push(k);
     });
     global.collections = names;
-    console.log("Mongo Connected");
+    console.log("Mongo Connected at ", config.mongodb.url);
   },
   async (err) => {
     console.log(err);
